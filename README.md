@@ -3,6 +3,20 @@
 </div>
 
 # Image-Generator
+This Python project provides a simple command-line interface for interacting with the SDXL-Turbo model, showcasing two key functionalities:
+
+## Text-to-image Conversion:
+
+Allows users to convert a text prompt into an image using the SDXL-Turbo model.
+Users are prompted to input a text prompt, and the script generates code snippets using the model to produce an image.
+The generated image is saved in the "output" directory.
+
+## Image-to-image Transformation:
+
+Enables users to transform an existing image based on a text prompt using SDXL-Turbo.
+Users input a text prompt, and the script generates code snippets utilizing the model to transform an initial image.
+The resulting image is saved in the "output" directory.
+
 ![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo-images/demo.jpg)
 
 ```bash
