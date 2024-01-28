@@ -7,8 +7,3 @@
 *.json linguist-generated=false
 *.json linguist-documentation=false
 *.json linguist-detectable=true
-
-*.yml linguist-vendored=false
-*.yml linguist-generated=false
-*.yml linguist-documentation=false
-*.yml linguist-detectable=true
