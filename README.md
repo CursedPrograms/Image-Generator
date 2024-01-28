@@ -1,5 +1,12 @@
+<div align="center">
+  <img alt="Python" src="https://img.shields.io/badge/python%20-%23323330.svg?&style=for-the-badge&logo=python&logoColor=white"/>
+</div>
+
 # Image-Generator
 
+```bash
+pip install -r requirements.txt
+```
 ```bash
 python main.py
 ```
