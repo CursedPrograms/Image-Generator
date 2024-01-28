@@ -19,7 +19,7 @@ def main():
 def text_to_image_prompt():
     print("Using SDXL-Turbo for Text-to-image:")
     print("Make sure to install the required packages using:")
-    print("pip install diffusers transformers accelerate --upgrade")
+    print("pip install diffusers transformers accelerate torch==1.10.0 Pillow==8.2.0 --upgrade")
     print()
 
     print("Sample prompt:")
@@ -29,13 +29,18 @@ def text_to_image_prompt():
 from diffusers import AutoPipelineForText2Image
 import torch
 from PIL import Image
+import os
 
-pipe = AutoPipelineForText2Image.from_pretrained("stabilityai/sdxl-turbo", torch_dtype=torch.float16, variant="fp16")
-pipe.to("cuda")
+pipe = AutoPipelineForText2Image.from_pretrained("stabilityai/sdxl-turbo", variant="fp16")
+pipe.to("cpu")
 
 prompt = "{prompt}"
 
 image = pipe(prompt=prompt, num_inference_steps=1, guidance_scale=0.0).images[0]
+
+# Ensure the 'output' directory exists
+os.makedirs("output", exist_ok=True)
+
 image.save("output/output.jpg")
     """
 
@@ -48,7 +53,7 @@ image.save("output/output.jpg")
 def image_to_image_prompt():
     print("Using SDXL-Turbo for Image-to-image:")
     print("Make sure to install the required packages using:")
-    print("pip install diffusers transformers accelerate --upgrade")
+    print("pip install diffusers transformers accelerate torch==1.10.0 Pillow==8.2.0 --upgrade")
     print()
 
     print("Sample prompt:")
@@ -59,15 +64,19 @@ from diffusers import AutoPipelineForImage2Image
 from diffusers.utils import load_image
 import torch
 from PIL import Image
+import os
 
-pipe = AutoPipelineForImage2Image.from_pretrained("stabilityai/sdxl-turbo", torch_dtype=torch.float16, variant="fp16")
-pipe.to("cuda")
+pipe = AutoPipelineForImage2Image.from_pretrained("stabilityai/sdxl-turbo", variant="fp16")
+pipe.to("cpu")
 
 init_image = load_image("https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/diffusers/cat.png").resize((512, 512))
 
 prompt = "{prompt}"
 
 image = pipe(prompt, image=init_image, num_inference_steps=2, strength=0.5, guidance_scale=0.0).images[0]
+
+os.makedirs("output", exist_ok=True)
+
 image.save("output/output.jpg")
     """
 
