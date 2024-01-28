@@ -28,7 +28,7 @@ python main.py
 - [GloriosaAI Repository](https://github.com/CursedPrograms/GloriosaAI)
 - [Gender-Age-ID Repository](https://github.com/CursedPrograms/Gender-Age-ID)
 - [Detect-Face Repository](https://github.com/CursedPrograms/Detect-Face)
-- [Cursed GPT](https://github.com/CursedPrograms/Cursed-GPT)
+- [Cursed GPT Repository](https://github.com/CursedPrograms/Cursed-GPT)
 
 <a href="https://cursed-entertainment.itch.io/" target="_blank">
     <img src="https://github.com/CursedPrograms/cursedentertainment/raw/main/images/logos/logo-wide-grey.png"
