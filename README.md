@@ -3,6 +3,7 @@
 </div>
 
 # Image-Generator
+![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo-images/demo.jpg)
 
 ```bash
 pip install -r requirements.txt
