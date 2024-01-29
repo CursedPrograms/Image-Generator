@@ -20,6 +20,7 @@ The resulting image is saved in the "output" directory.
   
 ![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo-images/demo00.jpg)
 ![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo-images/demo01.jpg)
+![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo-images/demo02.jpg)
 
 </div>
 
