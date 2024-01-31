@@ -1,4 +1,7 @@
-import sys
+from diffusers import AutoPipelineForImage2Image
+from diffusers.utils import load_image
+import torch
+from PIL import Image
 import os
 
 def main():
@@ -59,6 +62,10 @@ def image_to_image_prompt():
     print("Sample prompt:")
     prompt = input("Enter a text prompt: ")
 
+    # Import an image
+    image_path = input("/input/input.jpg")
+    init_image = load_image(image_path).resize((512, 512))
+
     image_to_image_code = f"""
 from diffusers import AutoPipelineForImage2Image
 from diffusers.utils import load_image
@@ -69,7 +76,8 @@ import os
 pipe = AutoPipelineForImage2Image.from_pretrained("stabilityai/sdxl-turbo", variant="fp16")
 pipe.to("cpu")
 
-init_image = load_image("https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/diffusers/cat.png").resize((512, 512))
+# Use the imported image
+init_image = load_image("{image_path}").resize((512, 512))
 
 prompt = "{prompt}"
 

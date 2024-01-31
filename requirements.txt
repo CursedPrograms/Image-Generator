@@ -1,4 +1,4 @@
 transformers==4.37.1
 pillow==10.2.0
-
-pip install diffusers transformers accelerate --upgrade
+transformers==4.37.1
+torch==1.10.0
