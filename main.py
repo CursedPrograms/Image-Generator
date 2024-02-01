@@ -3,6 +3,7 @@ from diffusers.utils import load_image
 import torch
 from PIL import Image
 import os
+import sys
 
 def main():
     print("SDXL-Turbo Model Card")
@@ -62,8 +63,16 @@ def image_to_image_prompt():
     print("Sample prompt:")
     prompt = input("Enter a text prompt: ")
 
-    # Import an image
-    image_path = input("/input/input.jpg")
+    # List all files in the "input" folder
+    input_folder = "input"
+    input_files = [f for f in os.listdir(input_folder) if os.path.isfile(os.path.join(input_folder, f))]
+
+    if not input_files:
+        print("No images found in the 'input' folder. Exiting.")
+        sys.exit()
+
+    image_path = os.path.join(input_folder, input_files[0])
+
     init_image = load_image(image_path).resize((512, 512))
 
     image_to_image_code = f"""
@@ -76,7 +85,7 @@ import os
 pipe = AutoPipelineForImage2Image.from_pretrained("stabilityai/sdxl-turbo", variant="fp16")
 pipe.to("cpu")
 
-# Use the imported image
+# Use the first image in the 'input' folder
 init_image = load_image("{image_path}").resize((512, 512))
 
 prompt = "{prompt}"
@@ -93,6 +102,7 @@ image.save("output/output.jpg")
     print(image_to_image_code)
 
     exec(image_to_image_code)
+
 
 if __name__ == "__main__":
     main()
