@@ -1,108 +1,48 @@
-from diffusers import AutoPipelineForImage2Image
-from diffusers.utils import load_image
-import torch
-from PIL import Image
 import os
-import sys
+import subprocess
 
 def main():
-    print("SDXL-Turbo Model Card")
-    print("1. Text-to-image")
-    print("2. Image-to-image")
+    print("Python Project")
 
-    choice = input("Select an operation (1 or 2): ")
+    scripts = {
+        "1": {
+            "name": "Run 'image-generator.py'",
+            "description": "Generate an image with SDXL.",
+            "file_name": "scripts/image-generator.py"
+        },
+        "00": {
+            "name": "Run 'install_dependencies.py'",
+            "description": "Install dependencies",
+            "file_name": "scripts/install_dependencies.py"
+        },
+    }
 
-    if choice == "1":
-        text_to_image_prompt()
-    elif choice == "2":
-        image_to_image_prompt()
-    else:
-        print("Invalid choice. Exiting.")
-        sys.exit()
+    current_script_dir = os.path.dirname(os.path.abspath(__file__))
 
-def text_to_image_prompt():
-    print("Using SDXL-Turbo for Text-to-image:")
-    print("Make sure to install the required packages using:")
-    print("pip install diffusers transformers accelerate torch==1.10.0 Pillow==8.2.0 --upgrade")
-    print()
-
-    print("Sample prompt:")
-    prompt = input("Enter a text prompt: ")
-
-    text_to_image_code = f"""
-from diffusers import AutoPipelineForText2Image
-import torch
-from PIL import Image
-import os
-
-pipe = AutoPipelineForText2Image.from_pretrained("stabilityai/sdxl-turbo", variant="fp16")
-pipe.to("cpu")
-
-prompt = "{prompt}"
-
-image = pipe(prompt=prompt, num_inference_steps=1, guidance_scale=0.0).images[0]
-
-# Ensure the 'output' directory exists
-os.makedirs("output", exist_ok=True)
-
-image.save("output/output.jpg")
-main()
-    """
-
-    print()
-    print("Generated code snippet:")
-    print(text_to_image_code)
-
-    exec(text_to_image_code)
-
-def image_to_image_prompt():
-    print("Using SDXL-Turbo for Image-to-image:")
-    print("Make sure to install the required packages using:")
-    print("pip install diffusers transformers accelerate torch==1.10.0 Pillow==8.2.0 --upgrade")
-    print()
-
-    print("Sample prompt:")
-    prompt = input("Enter a text prompt: ")
-
-    input_folder = "input"
-    input_files = [f for f in os.listdir(input_folder) if os.path.isfile(os.path.join(input_folder, f))]
-
-    if not input_files:
-        print("No images found in the 'input' folder. Exiting.")
-        sys.exit()
-
-    image_path = os.path.join(input_folder, input_files[0])
-
-    init_image = load_image(image_path).resize((512, 512))
-
-    image_to_image_code = f"""
-from diffusers import AutoPipelineForImage2Image
-from diffusers.utils import load_image
-import torch
-from PIL import Image
-import os
-
-pipe = AutoPipelineForImage2Image.from_pretrained("stabilityai/sdxl-turbo", variant="fp16")
-pipe.to("cpu")
-
-# Use the first image in the 'input' folder
-init_image = load_image("{image_path}").resize((512, 512))
-
-prompt = "{prompt}"
-
-image = pipe(prompt, image=init_image, num_inference_steps=2, strength=0.5, guidance_scale=0.0).images[0]
-
-os.makedirs("output", exist_ok=True)
-
-image.save("output/output.jpg")
-main()
-    """
-
-    print()
-    print("Generated code snippet:")
-    print(image_to_image_code)
-
-    exec(image_to_image_code)
+    while True:
+        print("\nAvailable Scripts:")
+        for key, script_info in scripts.items():
+            print(f"{key}: {script_info['name']} - {script_info['description']}")
+        
+        user_choice = input("Enter the number of the script you want to run (or 'q' to quit): ").strip()
+        
+        if user_choice == 'q':
+            break
+        
+        if user_choice in scripts:
+            selected_script = scripts[user_choice]
+            script_file_name = selected_script["file_name"]
+            script_file_path = os.path.join(current_script_dir, script_file_name)
+            
+            if os.path.exists(script_file_path):
+                try:
+                    subprocess.run(["python", script_file_path])
+                except Exception as e:
+                    print(f"An error occurred while running the script: {e}")
+            else:
+                print(f"Script file '{script_file_name}' does not exist.")
+        else:
+            print("Invalid choice. Please select a valid script number.")
 
 if __name__ == "__main__":
     main()
