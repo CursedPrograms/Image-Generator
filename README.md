@@ -24,6 +24,7 @@ The resulting image is saved in the "output" directory.
 
 </div>
 
+## How to Run:
 ```bash
 pip install -r requirements.txt
 ```
