@@ -1,5 +1,5 @@
 {
-  "ImageGeneratorConfig": {
+  "Config": {
     "AppName": "Image-Generator",
     "Description": "This Python project provides a simple command-line interface for interacting with the SDXL-Turbo model, showcasing two key functionalities:",
     "Functionalities": [
