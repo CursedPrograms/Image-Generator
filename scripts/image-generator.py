@@ -25,6 +25,16 @@ def text_to_image_prompt():
     print("Sample prompt:")
     prompt = input("Enter a text prompt: ")
 
+    output_directory = 'output'
+    os.makedirs(output_directory, exist_ok=True)
+
+    # Use a counter to create a unique filename
+    counter = 1
+    output_filename = f'output_{counter}.jpg'
+    while os.path.exists(os.path.join(output_directory, output_filename)):
+        counter += 1
+        output_filename = f'output_{counter}.jpg'
+
     text_to_image_code = f"""
 from diffusers import AutoPipelineForText2Image
 import torch
@@ -35,7 +45,7 @@ prompt = "{prompt}"
 image = pipe(prompt=prompt, num_inference_steps=1, guidance_scale=0.0).images[0]
 output_directory = 'output'
 os.makedirs(output_directory, exist_ok=True)
-image.save(os.path.join(output_directory, 'output.jpg'))
+image.save(os.path.join(output_directory, '{output_filename}'))
     """
 
     print()
@@ -53,6 +63,16 @@ def image_to_image_prompt():
     print("Sample prompt:")
     prompt = input("Enter a text prompt: ")
 
+    output_directory = 'output'
+    os.makedirs(output_directory, exist_ok=True)
+
+    # Use a counter to create a unique filename
+    counter = 1
+    output_filename = f'output_{counter}.jpg'
+    while os.path.exists(os.path.join(output_directory, output_filename)):
+        counter += 1
+        output_filename = f'output_{counter}.jpg'
+
     image_to_image_code = f"""
 from diffusers import AutoPipelineForImage2Image
 from diffusers.utils import load_image
@@ -66,7 +86,7 @@ prompt = "{prompt}"
 image = pipe(prompt, image=init_image, num_inference_steps=2, strength=0.5, guidance_scale=0.0).images[0]
 output_directory = 'output'
 os.makedirs(output_directory, exist_ok=True)
-image.save(os.path.join(output_directory, 'output.jpg'))
+image.save(os.path.join(output_directory, '{output_filename}'))
     """
 
     print()
