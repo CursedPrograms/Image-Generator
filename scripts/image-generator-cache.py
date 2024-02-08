@@ -35,11 +35,14 @@ def text_to_image_prompt():
         counter += 1
         output_filename = f'output_{counter}.jpg'
 
+    cache_directory = 'cache'
+    os.makedirs(cache_directory, exist_ok=True)
+
     text_to_image_code = f"""
 from diffusers import AutoPipelineForText2Image
 import torch
 from PIL import Image
-pipe = AutoPipelineForText2Image.from_pretrained("stabilityai/sdxl-turbo", torch_dtype=torch.float32, variant="fp16")
+pipe = AutoPipelineForText2Image.from_pretrained("stabilityai/sdxl-turbo", torch_dtype=torch.float32, variant="fp16", cache_dir="{cache_directory}")
 pipe.to("cpu")
 prompt = "{prompt}"
 image = pipe(prompt=prompt, num_inference_steps=1, guidance_scale=0.0).images[0]
@@ -73,12 +76,15 @@ def image_to_image_prompt():
         counter += 1
         output_filename = f'output_{counter}.jpg'
 
+    cache_directory = 'cache'
+    os.makedirs(cache_directory, exist_ok=True)
+
     image_to_image_code = f"""
 from diffusers import AutoPipelineForImage2Image
 from diffusers.utils import load_image
 import torch
 from PIL import Image
-pipe = AutoPipelineForImage2Image.from_pretrained("stabilityai/sdxl-turbo", torch_dtype=torch.float32, variant="fp16")
+pipe = AutoPipelineForImage2Image.from_pretrained("stabilityai/sdxl-turbo", torch_dtype=torch.float32, variant="fp16", cache_dir="{cache_directory}")
 pipe.to("cpu")
 image_path = "input/input.jpg"  
 init_image = load_image(image_path).resize((512, 512))
