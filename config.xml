@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<ImageGeneratorConfig>
+<Config>
   <AppName>Image-Generator</AppName>
   <Description>
     This Python project provides a simple command-line interface for interacting with the SDXL-Turbo model, showcasing two key functionalities:
@@ -18,4 +18,4 @@
       </Description>
     </Functionality>
   </Functionalities>
-</ImageGeneratorConfig>
+</Config>
