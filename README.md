@@ -17,7 +17,6 @@ Enables users to transform an existing image based on a text prompt using SDXL-T
 Users input a text prompt, and the script generates code snippets utilizing the model to transform an initial image.
 The resulting image is saved in the "output" directory.
 
-
 <div align="center">
   
 ![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo-images/demo00.jpg)
@@ -33,6 +32,11 @@ pip install -r requirements.txt
 ```
 ```bash
 python main.py
+```
+To make the setup script executable, run the following command in your terminal:
+
+```bash
+chmod +x setup.sh
 ```
 - [GloriosaAI Repository](https://github.com/CursedPrograms/GloriosaAI)
 - [Gender-Age-ID Repository](https://github.com/CursedPrograms/Gender-Age-ID)

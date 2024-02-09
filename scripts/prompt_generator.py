@@ -28,16 +28,16 @@ def generate_sentence(theme):
         "everything": "In a world where {fantasy_element} coexists with {real_world_element}, {event} unfolded."
     }
 
-    subject = random.choice(["the castle", "the forest", "the city", "the astronaut", "the dragon"])
-    adjective = random.choice(["ominous", "enchanted", "majestic", "futuristic", "medieval"])
-    color = random.choice(["vibrant", "pastel", "bold", "subtle", "expressive"])
-    emotion = random.choice(["whimsical", "nostalgic", "uplifting", "serene", "ecstatic"])
+    subject = random.choice(["the castle", "the forest", "the city", "the astronaut", "the dragon", "the ocean", "the mountain", "the time traveler", "the wizard", "the detective", "the robot", "the pirate", "the alien", "the superhero", "the vampire"])
+    adjective = random.choice(["ominous", "enchanted", "majestic", "futuristic", "medieval", "whimsical", "mysterious", "celestial", "ethereal", "timeless", "mythical", "steampunk", "luminous", "galactic", "cryptic"])
+    color = random.choice(["vibrant", "pastel", "bold", "subtle", "expressive", "neon", "earthy", "muted", "rich", "mellow", "vivid", "soft", "warm", "cool", "playful", "sophisticated", "monochromatic", "grayscale", "fiery", "calm"])
+    emotion = random.choice(["whimsical", "nostalgic", "uplifting", "serene", "ecstatic", "thoughtful", "inspiring", "tranquil", "joyful", "melancholic", "energetic", "peaceful", "hopeful", "adventurous", "dreamy", "reflective", "amused", "grateful", "determined", "content"])
     character = random.choice(["he", "she", "they"])
     name = random.choice(["Alice", "Bob", "Ella", "Leo", "Sophia"])
-    occasion = random.choice(["birthday", "wedding", "graduation", "celebration", "reunion"])
-    fantasy_element = random.choice(["magic", "dragons", "aliens", "mythical creatures", "time travel"])
-    real_world_element = random.choice(["technology", "nature", "history", "science", "culture"])
-    event = random.choice(["an unexpected meeting", "a grand adventure", "a tragic incident", "a joyful celebration", "a mysterious discovery"])
+    occasion = random.choice(["birthday", "wedding", "graduation", "celebration", "reunion", "anniversary", "promotion", "retirement", "engagement", "baby shower", "housewarming", "farewell", "victory party", "achievement", "milestone", "success", "holiday", "commencement", "awards ceremony", "family gathering"])
+    fantasy_element = random.choice(["magic", "dragons", "aliens", "mythical creatures", "time travel", "wizards", "elves", "fairies", "unicorns", "parallel dimensions", "enchanted realms", "sorcery", "extraterrestrial civilizations", "mystical artifacts", "prophecies", "ghosts", "shape-shifters", "teleportation", "portals"])
+    real_world_element = random.choice(["technology", "nature", "history", "science", "culture", "architecture", "art", "music", "literature", "geography", "astronomy", "medicine", "politics", "economics", "sports", "environment", "philosophy", "language", "mathematics", "psychology"])
+    event = random.choice(["an unexpected meeting", "a grand adventure", "a tragic incident", "a joyful celebration", "a mysterious discovery", "a thrilling escape", "an epic journey", "a heartwarming reunion", "a scientific breakthrough", "a cultural festival", "a daring rescue", "a romantic encounter", "a cosmic phenomenon", "a historical moment", "a technological innovation", "a surprising revelation", "a peaceful retreat", "a suspenseful mission", "a challenging quest", "an artistic masterpiece"])
 
     sentence_template = sentence_templates[theme]
     sentence = sentence_template.format(subject=subject, adjective=adjective, color=color, emotion=emotion,
