@@ -14,14 +14,14 @@ def main():
 
     scripts = {
         "1": {
-            "name": "Run 'image-generator.py'",
+            "name": "Run 'image_generator.py'",
             "description": "Generate an image with SDXL.",
-            "file_name": "scripts/image-generator.py"
+            "file_name": "scripts/image_generator.py"
         },
         "00": {
             "name": "Run 'install_dependencies.py'",
             "description": "Install dependencies",
-            "file_name": "scripts/install-dependencies.py"
+            "file_name": "scripts/install_dependencies.py"
         },
     }
 
