@@ -1,6 +1,7 @@
 psdenv/
 output/
 cache/
+generated_images/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

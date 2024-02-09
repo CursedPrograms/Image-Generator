@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SDXL-Turbo Model Card</title>
+    <meta charset="UTF-8">
+<link href="https://cursedprograms.github.io/cursedentertainment/cursedFavicon.png" rel="icon" type="image/x-icon" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>SDXL-Turbo Model Card</h1>
+    <form action="/text_to_image" method="post">
+        <label for="prompt">Enter a text prompt:</label>
+        <input type="text" name="prompt" required>
+        <button type="submit">Text-to-image</button>
+    </form>
+
+    <form action="/image_to_image" method="post">
+        <label for="prompt">Enter a text prompt:</label>
+        <input type="text" name="prompt" required>
+        <button type="submit">Image-to-image</button>
+    </form>
+
+    <div id="imagecontainer">
+        <h1>Image Generation</h1>
+        {% if result_image %}
+            <h2>Result Image:</h2>
+            <img src="{{ url_for('static', filename='generated_images/' + result_image) }}" alt="Result Image">
+        {% endif %}
+    </div>
+    <div class="icons_container">
+        <iframe src="https://cursedprograms.github.io/cursedentertainment/iframes/social-media-icons/social-media-icons.html"
+        frameborder="0"></iframe>
+        </div>
+    <footer id="dynamicFooter"></footer>
+    <script src="https://cursedprograms.github.io/cursedentertainment/scripts/footer.js"></script>
+</body>
+</html>
