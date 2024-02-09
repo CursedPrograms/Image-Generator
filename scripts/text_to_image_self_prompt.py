@@ -1,6 +1,7 @@
 import os
 import json
 import time
+import random
 
 def text_to_image_prompt(prompt):
     print("Using SDXL-Turbo for Text-to-image:")
@@ -51,8 +52,8 @@ def main():
             prompts = []
 
         if prompts:
-            for prompt in prompts:
-                text_to_image_prompt(prompt)
+            random_prompt = random.choice(prompts)
+            text_to_image_prompt(random_prompt)
         else:
             print(f"No prompts found in {json_file_path}")
 
