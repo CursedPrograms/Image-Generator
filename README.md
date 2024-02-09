@@ -7,6 +7,9 @@
 </div>
     
 # Image-Generator
+
+[Image-Gen-Demo Images](https://cursedprograms.github.io/image-gen-demo-images/)
+
 This Python project provides a simple command-line interface for interacting with the SDXL-Turbo model, showcasing two key functionalities:
 
 ## Text-to-image Conversion:
