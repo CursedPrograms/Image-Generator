@@ -16,6 +16,8 @@ The generated image is saved in the "output" directory.
 Enables users to transform an existing image based on a text prompt using SDXL-Turbo.
 Users input a text prompt, and the script generates code snippets utilizing the model to transform an initial image.
 The resulting image is saved in the "output" directory.
+
+
 <div align="center">
   
 ![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo-images/demo00.jpg)
