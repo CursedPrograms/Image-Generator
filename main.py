@@ -29,9 +29,14 @@ def main():
             "file_name": "scripts/image_generator_self_prompt.py"
         },
         "4": {
-            "name": "Run 'prompt_generator.py.py'",
+            "name": "Run 'prompt_generator.py'",
             "description": "Generate prompts",
             "file_name": "scripts/prompt_generator.py"
+        },
+        "5": {
+            "name": "Run 'prompt_generator_ui.py'",
+            "description": "Generate images using tkinter",
+            "file_name": "scripts/prompt_generator_ui.py"
         },
         "00": {
             "name": "Run 'install_dependencies.py'",
