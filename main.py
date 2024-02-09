@@ -18,6 +18,21 @@ def main():
             "description": "Generate an image with SDXL.",
             "file_name": "scripts/image_generator.py"
         },
+        "2": {
+            "name": "Run 'image_generator_cache.py'",
+            "description": "Generate an image with SDXL.",
+            "file_name": "scripts/image_generator_cache.py"
+        },
+        "3": {
+            "name": "Run 'image_generator_self_prompt.py'",
+            "description": "Generate random images with SDXL.",
+            "file_name": "scripts/image_generator_self_prompt.py"
+        },
+        "4": {
+            "name": "Run 'prompt_generator.py.py'",
+            "description": "Generate prompts.",
+            "file_name": "scripts/prompt_generator.py.py"
+        },
         "00": {
             "name": "Run 'install_dependencies.py'",
             "description": "Install dependencies",

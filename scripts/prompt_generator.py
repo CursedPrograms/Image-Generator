@@ -48,6 +48,13 @@ def generate_sentence(theme):
 
 def main():
     json_file_path = 'prompts.json'
+    
+    # Check if the JSON file exists
+    if not os.path.exists(json_file_path):
+        # If not, create an empty JSON file
+        with open(json_file_path, 'w') as file:
+            json.dump([], file)
+
     existing_prompts = load_prompts(json_file_path)
     themes = ["gothic", "artsy", "tragic", "happy", "everything"]
 
