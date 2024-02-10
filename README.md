@@ -8,6 +8,8 @@
     
 # Image-Generator
 
+![Demo Image](/demo-images/image-gen-cover.png)
+
 [Image-Gen-Demo Images](https://cursedprograms.github.io/image-gen-demo-images/)
 
 This Python project provides a simple command-line interface for interacting with the SDXL-Turbo model, showcasing two key functionalities:

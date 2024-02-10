@@ -28,7 +28,7 @@ def generate_sentence(theme):
         "everything": "In a world where {fantasy_element} coexists with {real_world_element}, {event} unfolded."
     }
 
-    subject = random.choice(["the castle", "the forest", "the city", "the astronaut", "the dragon", "the ocean", "the mountain", "the time traveler", "the wizard", "the detective", "the robot", "the pirate", "the alien", "the superhero", "the vampire"])
+    subject = random.choice(["the castle", "the ghost", "the forest", "the city", "the astronaut", "the dragon", "the ocean", "the mountain", "the time traveler", "the wizard", "the detective", "the robot", "the pirate", "the alien", "the superhero", "the vampire"])
     adjective = random.choice(["ominous", "enchanted", "majestic", "futuristic", "medieval", "whimsical", "mysterious", "celestial", "ethereal", "timeless", "mythical", "steampunk", "luminous", "galactic", "cryptic"])
     color = random.choice(["vibrant", "pastel", "bold", "subtle", "expressive", "neon", "earthy", "muted", "rich", "mellow", "vivid", "soft", "warm", "cool", "playful", "sophisticated", "monochromatic", "grayscale", "fiery", "calm"])
     emotion = random.choice(["whimsical", "nostalgic", "uplifting", "serene", "ecstatic", "thoughtful", "inspiring", "tranquil", "joyful", "melancholic", "energetic", "peaceful", "hopeful", "adventurous", "dreamy", "reflective", "amused", "grateful", "determined", "content"])
