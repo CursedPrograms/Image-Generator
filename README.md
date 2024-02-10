@@ -8,9 +8,7 @@
     
 # Image-Generator
 
-![Demo Image](/demo-images/image-gen-cover.png)
-
-[Image-Gen-Demo Images](https://cursedprograms.github.io/image-gen-demo-images/)
+![Demo Image](/demo_images/image-gen-cover.png)
 
 This Python project provides a simple command-line interface for interacting with the SDXL-Turbo model, showcasing two key functionalities:
 
@@ -28,10 +26,10 @@ The resulting image is saved in the "output" directory.
 
 <div align="center">
   
-![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo-images/demo00.jpg)
-![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo-images/demo01.jpg)
-![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo-images/demo02.jpg)
-![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo-images/demo03.jpg)
+![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo_images/demo00.jpg)
+![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo_images/demo01.jpg)
+![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo_images/demo02.jpg)
+![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo_mages/demo03.jpg)
 
 </div>
 
