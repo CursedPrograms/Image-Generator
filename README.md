@@ -29,7 +29,7 @@ The resulting image is saved in the "output" directory.
 ![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo_images/demo00.jpg)
 ![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo_images/demo01.jpg)
 ![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo_images/demo02.jpg)
-![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo_mages/demo03.jpg)
+![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo_images/demo03.jpg)
 
 </div>
 
