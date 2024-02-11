@@ -26,7 +26,7 @@ The resulting image is saved in the "output" directory.
 
 <div align="center">
   
-[Creation by the Image-Genetator](https://cursedprograms.github.io/image-gen-demo-images/)
+[Creations by the Image-Genetator](https://cursedprograms.github.io/image-gen-demo-images/)
 
 </div>
 
