@@ -26,10 +26,7 @@ The resulting image is saved in the "output" directory.
 
 <div align="center">
   
-![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo_images/demo00.jpg)
-![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo_images/demo01.jpg)
-![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo_images/demo02.jpg)
-![Demo Image](https://github.com/CursedPrograms/Image-Generator/raw/main/demo_images/demo03.jpg)
+[Creation by the Image-Genetator](https://cursedprograms.github.io/image-gen-demo-images/)
 
 </div>
 
