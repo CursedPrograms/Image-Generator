@@ -39,17 +39,26 @@ The resulting image is saved in the "output" directory.
 </div>
 
 ## How to Run:
+### Setup Virtual environment
+
+#### Lunix
 ```bash
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+#### Windows PowerShell
+```bash
+python.exe -m pip install --upgrade pip
+py -3.11 -m venv venv311
+venv311\Scripts\activate
 pip install -r requirements.txt
 ```
 ```bash
-python main.py
-```
-To make the setup script executable, run the following command in your terminal:
-
-```bash
 chmod +x setup.sh
 ```
+
+<br>
 - [GloriosaAI Repository](https://github.com/CursedPrograms/GloriosaAI)
 - [Gender-Age-ID Repository](https://github.com/CursedPrograms/Gender-Age-ID)
 - [Detect-Face Repository](https://github.com/CursedPrograms/Detect-Face)
