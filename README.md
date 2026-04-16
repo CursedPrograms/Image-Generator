@@ -95,6 +95,11 @@ pip install -r requirements.txt
         alt="SynthWomb" style="width:200px;"/>
 </a>
 </div>
+<br>
+<div align="center">
+© Cursed Entertainment 2026
+</div>
+<br>
 <div align="center">
 <a href="https://cursed-entertainment.itch.io/" target="_blank">
     <img src="https://github.com/CursedPrograms/cursedentertainment/raw/main/images/logos/logo-wide-grey.png"
