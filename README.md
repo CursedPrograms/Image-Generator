@@ -52,7 +52,7 @@ The resulting image is saved in the "output" directory.
 
 ---
 
-## How to Run:
+## Setup:
 ### Environment Setup
 
 <details>
