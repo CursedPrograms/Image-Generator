@@ -81,10 +81,10 @@ pip install -r requirements.txt
 
 ## Related Projects
 
-- [GloriosaAI Repository](https://github.com/CursedPrograms/GloriosaAI)
-- [Gender-Age-ID Repository](https://github.com/CursedPrograms/Gender-Age-ID)
-- [Detect-Face Repository](https://github.com/CursedPrograms/Detect-Face)
-- [Cursed GPT Repository](https://github.com/CursedPrograms/Cursed-GPT)
+- [GloriosaAI](https://github.com/CursedPrograms/GloriosaAI)
+- [Gender-Age-ID](https://github.com/CursedPrograms/Gender-Age-ID)
+- [Detect-Face](https://github.com/CursedPrograms/Detect-Face)
+- [Cursed-GPT](https://github.com/CursedPrograms/Cursed-GPT)
 
 ---
 
