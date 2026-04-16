@@ -13,10 +13,17 @@
 <div align="center">
   <img alt="Flask" src="https://img.shields.io/badge/flask%20-%23323330.svg?&style=for-the-badge&logo=flask&logoColor=white"/>
 </div>
+
+---
     
 # Image-Generator
 
 ![Image-Generator](https://github.com/CursedPrograms/Image-generator/raw/main/demo_images/image-gen-cover.png)
+
+## 📖 Overview
+
+<details>
+<summary><b>Overview</b></summary>
 
 This Python project provides a simple command-line interface for interacting with the SDXL-Turbo model, showcasing two key functionalities:
 
@@ -32,14 +39,23 @@ Enables users to transform an existing image based on a text prompt using SDXL-T
 Users input a text prompt, and the script generates code snippets utilizing the model to transform an initial image.
 The resulting image is saved in the "output" directory.
 
+</details>
+
+---
+
 <div align="center">
-  
+
 [Creations by the Image-Genetator](https://cursedprograms.github.io/image-gen-demo-images/)
 
 </div>
 
+---
+
 ## How to Run:
-### Setup Virtual environment
+### Environment Setup
+
+<details>
+<summary><b>Environment Setup</b></summary>
 
 #### Lunix
 ```bash
@@ -54,15 +70,18 @@ py -3.11 -m venv venv311
 venv311\Scripts\activate
 pip install -r requirements.txt
 ```
-```bash
-chmod +x setup.sh
-```
+</details>
 
-<br>
+---
+
+## Related Projects
+
 - [GloriosaAI Repository](https://github.com/CursedPrograms/GloriosaAI)
 - [Gender-Age-ID Repository](https://github.com/CursedPrograms/Gender-Age-ID)
 - [Detect-Face Repository](https://github.com/CursedPrograms/Detect-Face)
 - [Cursed GPT Repository](https://github.com/CursedPrograms/Cursed-GPT)
+
+---
 
 <br>
 <div align="center">
