@@ -52,6 +52,21 @@ The resulting image is saved in the "output" directory.
 
 ---
 
+## For other programs: scripts/generate.py
+
+The same SDXL-Turbo pipelines without the questions, so other programs can use them ([DREAM](https://github.com/CursedPrograms/DREAM) paints her dreams with it):
+
+```bash
+python scripts/generate.py --prompt "a red fox in snow" --out fox.jpg
+python scripts/generate.py --prompt "as a watercolour" --init in.jpg --out out.jpg
+python scripts/generate.py --job job.json        # many images, one model load
+python scripts/generate.py --model stabilityai/sd-turbo ...   # smaller: 4 GB GPU, 8 GB RAM
+```
+
+A job file is `{"prompt": "...", "keyframe": "key.jpg", "frames": [["in.jpg", "out.jpg"], ...], "strength": 0.5, "size": 512, "seed": 1}`; each image is written as soon as it's done.
+
+---
+
 ## Setup:
 ### Environment Setup
 
