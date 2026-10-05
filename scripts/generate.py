@@ -11,7 +11,10 @@ image_generator.py, driven by arguments instead of input().
 A job file:
     {"prompt": "...", "keyframe": "key.jpg",            text-to-image (optional)
      "frames": [["in1.jpg", "out1.jpg"], ...],          image-to-image, each in -> out
-     "strength": 0.5, "size": 512, "seed": 1234}
+     "strength": 0.5, "size": 512, "seed": 1234,
+     "blend": 0.6}                                       optional: mix each frame with the keyframe
+                                                         first, ramping up to this much by the last
+                                                         frame, so the frames turn into the keyframe
 
 Each image is written as soon as it's done, so a job that gets killed part
 way still leaves what it finished. --model picks another turbo model, e.g.
@@ -54,9 +57,12 @@ def text_to_image(t2i, prompt, size, seed, steps=1):
                width=size, height=size, generator=generator_for(seed)).images[0]
 
 
-def image_to_image(i2i, prompt, init_path, size, strength, seed, steps=2):
+def image_to_image(i2i, prompt, init_path, size, strength, seed, steps=2, mix=None, mix_amount=0.0):
     from diffusers.utils import load_image
+    from PIL import Image
     init = load_image(init_path).convert("RGB").resize((size, size))
+    if mix is not None and mix_amount > 0:
+        init = Image.blend(init, mix.convert("RGB").resize((size, size)), mix_amount)
     # turbo models need steps * strength >= 1
     steps = max(steps, int(1 / max(strength, 0.05)) + 1)
     return i2i(prompt, image=init, num_inference_steps=steps, strength=strength,
@@ -104,10 +110,15 @@ def main():
     t2i, i2i = load_pipelines(args.model, args.device)
     prompt, size, seed = job["prompt"], int(job.get("size", 512)), job.get("seed")
     strength = float(job.get("strength", 0.5))
+    key = None
     if job.get("keyframe"):
-        save(text_to_image(t2i, prompt, size, seed), job["keyframe"])
-    for src, dst in job.get("frames", []):
-        save(image_to_image(i2i, prompt, src, size, strength, seed), dst)
+        key = text_to_image(t2i, prompt, size, seed)
+        save(key, job["keyframe"])
+    frames = job.get("frames", [])
+    blend = float(job.get("blend", 0) or 0)
+    for n, (src, dst) in enumerate(frames):
+        amount = blend * (n + 1) / len(frames) if key is not None else 0
+        save(image_to_image(i2i, prompt, src, size, strength, seed, mix=key, mix_amount=amount), dst)
     return 0
 
 
